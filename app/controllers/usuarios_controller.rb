@@ -1,17 +1,17 @@
 class UsuariosController < ApplicationController
     skip_before_action :verify_authenticity_token
     
-    def login
-		if (defined? params['login']).nil?
-  	      @erro = false
-  	      @usuario = Usuario.new
+    def logar
+      unless params.has_key? :senha
+  	    @erro = false
+  	    @usuario = Usuario.new
+	  else
+		resultado_login = Usuario.verificar_login(params)
+		if resultado_login
 		else
-		  resultado_login = Usuario.verificar_login(params)
-		  if resultado_login
-		  else
-			@erro = true  
-		  end
+		  @erro = true  
 		end
+	  end
     end
   private
     #Never trust parameters from the scary internet, only allow the white list through.
