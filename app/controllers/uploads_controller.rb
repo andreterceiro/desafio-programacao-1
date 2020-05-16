@@ -1,6 +1,6 @@
 class UploadsController < ApplicationController
   before_action 'verificar_logado', 'index'
-  
+
   def index
     @mostrar_menu = true
     
