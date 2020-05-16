@@ -18,6 +18,11 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  errors:
+    messages:
+      carrierwave_processing_error: "Erro ao processar o arquivo"
+      carrierwave_integrity_error: "Formato inválido"
+      carrierwave_download_error: "Erro no upload"
+      extension_whitelist_error: "A extensão do arquivo deve ser txt"
+      extension_blacklist_error: "A extensão do arquivo deve ser txt"
