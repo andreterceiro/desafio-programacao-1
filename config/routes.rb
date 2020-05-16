@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+  get '/upload' => 'uploads#index'
+  post '/upload' => 'uploads#index'
+  
   root :to => 'usuarios#logar'
 
   get '/logar' => 'usuarios#logar'
   post '/logar' => 'usuarios#logar'
+  
+  get '/logout' => 'usuarios#logout'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
