@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get '/upload' => 'uploads#index'
-  post '/upload' => 'uploads#index'
+  get '/upload' => 'compras#index'
+  post '/upload' => 'compras#index'
+  get "/unidades/:id" => "compras_unidades#index" 
   
   root :to => 'usuarios#logar'
 
