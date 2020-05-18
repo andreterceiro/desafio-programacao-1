@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200514191533) do
+ActiveRecord::Schema.define(version: 20200514191733) do
+
+  create_table "compra_unidades", force: :cascade do |t|
+    t.integer  "compra_id"
+    t.string   "purchaser_name"
+    t.string   "item_description"
+    t.float    "item_price"
+    t.integer  "purchase_count"
+    t.string   "merchant_address"
+    t.string   "merchant_name"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "compras", force: :cascade do |t|
+    t.string   "arquivo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "usuarios", force: :cascade do |t|
     t.string   "login"
