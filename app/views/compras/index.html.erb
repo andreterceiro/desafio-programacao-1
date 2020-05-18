@@ -1,0 +1,28 @@
+<% unless @mensagem.nil? %>
+  <div id="erro" style="color:red; border: 1px solid #FF0000; padding:5px; margin-top:10px">
+    <%= @mensagem %>
+  </div>
+<% end %>
+
+<div id="titulo">
+  Por favor selecione um arquivo (<u><b>com extensão tab</b></u>) e clique em "Enviar":
+</div>
+
+<table>
+  <tr>
+    <th>Arquivo</th>
+    <th>Detalhes</th>
+  </tr>
+  <% @registros.each {|registro| %>
+    <tr>
+      <td><%= registro.arquivo %></td>
+      <td><a href="/unidades/<%= registro.id %>">Detalhes</a></td>
+    </tr>
+  <% } %>
+ </table> 
+ <hr />
+<form method="post" enctype="multipart/form-data">
+  <input type="file" name="compras" />
+  <input type="hidden" name="contador" value="<%= @contador %>" />
+  <input type="submit" value="Enviar" /> 
+</form>
