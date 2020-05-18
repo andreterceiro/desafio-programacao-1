@@ -1,0 +1,24 @@
+Total: <span id="total"><%= @soma %></span>
+<hr />
+<table cellpadding="5" border="1">
+  <tr>
+    <th>Purchaser name</th>
+    <th>Item description</th>
+    <th>Item price</th>
+    <th>Purchase count</th>
+    <th>Merchant address</th>
+    <th>Merchant name</th>
+  </tr>
+  <% @registros.each do |registro| %>
+    <tr>
+      <td><%= registro.purchaser_name %></td>
+      <td><%= registro.item_description %></td>
+      <td class="preco"><%= registro.item_price %></td>
+      <td class="quantidade"><%= registro.purchase_count %></td>
+      <td><%= registro.merchant_address %></td>
+      <td><%= registro.purchaser_name %></td>
+	</tr>
+  <% end %>
+</table>
+<br />
+<a href="/upload">Voltar</a>
